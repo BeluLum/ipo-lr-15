@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function get_calc_info() {
+    let num1 = Number(prompt("Введите первое число"));
+    let symbol = prompt("Введите знак операции");
+    let num2 = Number(prompt("Введите второе число"));
+    calculator(symbol, num1, num2);
+}
+
+function calculator(symbol, num1, num2) {
+    switch(symbol) {
+        case "+":
+            alert(num1 + num2);
+            break;
+        case "-":
+            alert(num1 - num2);
+            break;
+        case "*":
+            alert(num1 * num2);
+            break;
+        case "/":
+            alert(num1 / num2);
+            break;
+    }
+    get_calc_info();
+}
+
+get_calc_info();
+  
+    </script>
+    
+</body>
+</html>

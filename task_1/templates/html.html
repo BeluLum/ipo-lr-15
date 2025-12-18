@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let num1 = prompt("Введите второе число");
+    let symbol = prompt("Введите знак операции");
+    let num2 = prompt("Введите первое число");
+        function calculator(symbol, num1, num2){
+            switch (symbol){
+                case "+":
+                    return num1 * num2
+
+                case "-":
+                    return num1 - num2
+
+                case "*":
+                    return num1 * num2
+
+                case "/":
+                    return num1 / num2
+            }
+        }
+    calculator(symbol, num1, num2);
+    </script>
+    
+</body>
+</html>
