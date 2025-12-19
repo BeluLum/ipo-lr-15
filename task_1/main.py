@@ -1,50 +1,14 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask
+from app.routes import main_page, hello_page, square_page, status_page, math, calc_page
+
 app = Flask(__name__)
 
-@app.route('/')
-def hello():
-    return 'For super Earth!'
-
-@app.route('/hello/<name>')
-def hello_name(name):
-    return f"A new warrior({name}) for the Horde!"
-
-@app.route('/square/<int:number>')
-def square(number):
-    return str(number * number)
-
-@app.route('/status')
-def json_status():
-    status = {
-    "status": "running",
-    "service": "Flask App"
-    }
-    return jsonify(status)
-
-@app.route('/math')
-def calculator():
-    operation= request.args.get('operation')
-    num1 = int(request.args.get('num1'))
-    num2 = int(request.args.get('num2'))
-    match(operation):
-        case "+":
-            result = str(num1 + num2)
-            return result
-        case "-":
-            result = str(num1 - num2)
-            return result
-        case " /":
-            result = str(num1 / num2)
-            return result
-        case "*":
-            result = str(num1 * num2)
-            return result
-    return " "
-   
-
-@app.route('/calc')
-def render():
-    return render_template("html.html")
+app.register_blueprint(main_page)
+app.register_blueprint(hello_page)
+app.register_blueprint(square_page)
+app.register_blueprint(status_page)
+app.register_blueprint(math)
+app.register_blueprint(calc_page)
 
 if __name__ == '__main__':
     app.run(debug=True)
